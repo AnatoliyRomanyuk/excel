@@ -1,16 +1,47 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <meta charset = "utf-8">
-        <title> Exel </title>
-        <script src="spreadsheet.js"></script>
-            </head>
-    <body>  
-        <form name = "form" enctype="multipart/form-data" id="form" method="post" onsubmit="return false;">
-            Rows:    <input type="text" size="10"> </input> </br>
-            Columns: <input type="text" size="10"> </input>
-            <button type="submit" onclick = "genTable()">Submit</button>
-        </form>
-        
-    </body>
-</html>
+<head>
+    <meta charset = "utf-8">
+    <title>Exel</title>
+    <script src="spreadsheet.js"></script>
+    <link rel="stylesheet" href="spreadsheet.css">
+</head>
+<body>   
+    <div>       
+        <input type="text" size="10" id="rows"> Rows 
+         </br>
+        <input type="text" size="10" id="columns"> Columns
+        </br>
+        <button type="submit" onclick = "tableCreate()"> Submit </button>        
+    </div>
+    <div></div>   
+    <p> fdjhsbgnksdfngndfsjgsg  </p>
+
+    <script>  </script>
+   
+    <table id="table">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </tr>
+        <tr>
+            <td>John Smith</td>
+            <td>johnsmith@gmail.com</td>
+            <td>+12345678</td>
+        </tr>
+        <tr>
+            <td>John Smith</td>
+            <td>johnsmith@gmail.com</td>
+            <td>+12345678</td>
+        </tr>
+        <tr>
+            <td>John Smith</td>
+            <td>johnsmith@gmail.com</td>
+            <td>+12345678</td>
+        </tr>
+    </table> 
+
+    
+</body>
+</html> 

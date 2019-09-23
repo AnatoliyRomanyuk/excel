@@ -1,12 +1,68 @@
-function genTable(i, j) {
-    var myTable = '<TABLE BORDER="1">\n <TBODY>\n';
-    for (i = 0; i < k; i++) {
-        myTable += '  <TR>\n';
-        for (j = 0; j < k; j++) {
-            myTable += '    <TD> @ </TD>\n';
+"use strict"
+const tableCreate = () => {
+    //let body = document.getElementsByTagName('body')[0];
+    let div = document.getElementsByTagName('div')[1];
+    let tbl = document.createElement('table');    
+    tbl.setAttribute('class', 'table');
+    let tbdy = document.createElement('tbody');
+    let rows = document.getElementById("rows").value;    
+    let columns = document.getElementById("columns").value;
+    for (let i = 0; i < columns; i++) {
+      let tr = document.createElement('tr');
+        for (let j = 0; j < rows; j++) {
+            let td = document.createElement('td');            
+            td.appendChild(document.createTextNode('&nbsp;'));
+            td.setAttribute('class', ' ');
+            td.setAttribute('id', 'table');
+            //  td.setAttribute('ondblclick', 'f()');
+            td.className = "td";                 
+            tr.appendChild(td)
         }
-        myTable += '  </TR>\n';
+      tbdy.appendChild(tr);
     }
-    myTable += ' </TBODY>\n</TABLE>\n';
-    document.getElementById('container').innerHTML = myTable;
-}
+    tbl.appendChild(tbdy);
+    div.appendChild(tbl)
+  } 
+
+  
+  /* const conEl = () => {
+    let val = this.innerHTML;
+    console.log(val);
+  }    */
+
+  window.onload = function(){
+   document.querySelectorAll("td").forEach((element) => { 
+    element.ondblclick = function() {
+    let val = this.innerHTML;
+    console.log(val);
+    let input = document.createElement("input");
+    console.log(input);
+    input.value = val;    
+		input.onblur = function() {
+      let val = this.value;
+      console.log('in'+ val);
+      this.parentNode.innerHTML = val;     
+		}
+		this.innerHTML = " ";
+		this.appendChild(input);
+		input.focus();
+  }});  
+  /*  */
+  // let table = document.querySelector('#table');
+  let table = document.querySelector('#table');
+  console.log(table);
+  let selectedCells = table.getElementsByClassName('selected');  
+  table.addEventListener('click', function(e) {
+  let td = e.target;
+  console.log(selectedCells);  
+  if (selectedCells.length) {
+    selectedCells[0].className = '';
+  }
+  td.className = 'selected';
+  
+});
+
+};
+
+
+
