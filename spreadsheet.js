@@ -19,6 +19,7 @@ const inOutData = () =>{
 
 }
 
+
 const createTable = () => {
   let div = document.getElementsByTagName('div')[1];
   let tbl = document.createElement('table');    
