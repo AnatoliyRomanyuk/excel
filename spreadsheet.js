@@ -1,14 +1,23 @@
 "use strict"
 const showTable = () => {
   createTable();
-  addEvent();  
+  addEvent(); 
+  inOutData(); 
 }
 
 const addEvent = () =>{ 
   addEventsForDblClick();
   addEventsForOneClick();
   addEventsForHitDelete();
-};
+  /* addEventsForMoveUp();
+  addEventsForMoveDown();
+  addEventsForMoveLeft();
+  addEventsForMoveUpRight(); */
+}
+
+const inOutData = () =>{
+
+}
 
 const createTable = () => {
   let div = document.getElementsByTagName('div')[1];
@@ -25,8 +34,8 @@ const createTable = () => {
         if (i === 0 && j === 0) {
           td.width = 50;
         } else if (i === 0 && j > 0) {
-          const alpha = () => {return td.innerHTML = 'a'; }
-                   alpha(); 
+          let alpha = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+          td.innerHTML = alpha.charAt(j);
           td.width = 50;
         } else if (i > 0 && j === 0) {
           td.innerHTML = i;
@@ -39,7 +48,7 @@ const createTable = () => {
   }
 tbl.appendChild(tbdy);
 div.appendChild(tbl)
-};
+}
  
 const addEventsForDblClick = () => { 
 document.querySelectorAll('td').forEach((element) => { 
@@ -56,17 +65,16 @@ input.onblur = function() {
 	this.appendChild(input);
 	input.focus();
 }});  
-};
+}
 
 const addEventsForHitDelete = () => {
 // (event.keyCode === 46)
   let table = document.querySelector('#table');  
-  //let selectedCells = table.getElementsByClassName('highlight');  
-  table.addEventListener('keydown', function() {     
-  if (event.keyCode === 46) {
+  let selectedCells = table.getElementsByClassName('highlight');
+  table.addEventListener('keydown', function() {
+  if (event.key === 'Delete') {
     console.log('ff');
   }
-    
 });
 }
 
@@ -74,7 +82,7 @@ const addEventsForOneClick = () => {
   let table = document.getElementById('table');
   let selectedTd;
   table.onclick = function(event) {
-    let target = event.target;    
+    let target = event.target;
     while (target !== this) {
       if (target.tagName === 'TD') {
         highlight(target);        
@@ -89,4 +97,4 @@ const addEventsForOneClick = () => {
     selectedTd = node;
     selectedTd.classList.add('highlight');
   }
-};
+}
