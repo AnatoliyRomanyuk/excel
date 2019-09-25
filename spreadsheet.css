@@ -1,35 +1,64 @@
-.td {     
-    width: 20%;
-   /* height: 18px;*/
+#table {
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+#table th {
+    text-align: center;
+    font-weight: bold;
+}
+  
+#table td {
+    width: 100px;
+    height: 24px;
+    white-space: nowrap;
+    text-align: center;
+    vertical-align: bottom;    
     border: 1px solid #999999;
+    /* text-overflow: ellipsis; */
+    cursor: text;
+
+}
+
+#table td p {
     text-overflow: ellipsis;
-    font-size: 14;
-    cursor: default;
 }
-.table {
-    border: 1px solid black;
+
+#table td input {    
+    width: 100px;
+    height: 20px;    
+    outline: 0;  
 }
+
+#table .highlight {
+    border: 2px solid #2c5e3c;
+}
+
+#table tr:nth-child(2n+3) {             /*odd - Все нечетные номера элементов*/
+    background: #EEEEEE; 
+    color: black; 
+} 
+
+#table tr:nth-child(2n) {            /*even - Все четные номера элементов */
+    background: #FFFFFF; 
+    color: black; 
+}
+
 tr:nth-child(1) {
-    background: #CCCCCC; /* Цвет фона */
-    color: black; /* Цвет текста */
-} 
-tr:nth-child(2n+3) {             /*odd - Все нечетные номера элементов*/
-    background: #EEEEEE; /* Цвет фона */
-    color: black; /* Цвет текста */
-} 
-tr:nth-child(2n) {            /*even - Все четные номера элементов */
-    background: #FFFFFF; /* Цвет фона */
-    color: black; /* Цвет текста */
-}    
+    background: #CCCCCC;  
+    color: black;  
+}   
+    
 td:nth-child(1) {
-    background: #CCCCCC; /* Цвет фона */
-    color: black; /* Цвет текста */    
+    background: #CCCCCC; 
+    color: black;     
 } 
-/*  */
-td.selected {
-    /* background-color: red; */
+
+/* td.selected {
+     background-color: red; 
     border: 1px solid red;
 }
-table {
+#table {
     cursor: text;
- }
+ } */
+
+ /* */
