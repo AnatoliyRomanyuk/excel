@@ -110,7 +110,7 @@ input.onblur = function() {
   console.log(true);      
 } */
 const addEventsForHitDelete = () => {
-  let table = document.querySelector('#table');
+/*   let table = document.querySelector('#table');
   let selectedCells = table.getElementsByClassName('highlight');
   let selectedTd;  
   table.addEventListener('keydown', function(event) {
@@ -124,7 +124,7 @@ const addEventsForHitDelete = () => {
     }
     }
     
-});
+}); */
 }
 
 const addEventsForOneClick = () => {
