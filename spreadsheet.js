@@ -69,14 +69,19 @@ input.onblur = function() {
 }
 
 const addEventsForHitDelete = () => {
-// (event.keyCode === 46)
-  let table = document.querySelector('#table');  
-  let selectedCells = table.getElementsByClassName('highlight');
-  table.addEventListener('keydown', function() {
-  if (event.key === 'Delete') {
-    console.log('ff');
-  }
-});
+  // let elem = document.getElementById('table')
+    // (event.keyCode === 46)
+  document.addEventListener('keydown', (function(event) {
+    if (event.key === 'Delete') {
+      let target = event.target;
+      while (target !== this) {
+        if (target.tagName === 'TD') {
+          console.log(target.classList.contains("example"));
+        }
+        target = target.parentNode;
+      }
+    }
+  }))
 }
 
 const addEventsForOneClick = () => {
@@ -84,9 +89,10 @@ const addEventsForOneClick = () => {
   let selectedTd;
   table.onclick = function(event) {
     let target = event.target;
+    console.log(event.target);
     while (target !== this) {
       if (target.tagName === 'TD') {
-        highlight(target);        
+        highlight(target);
       }
       target = target.parentNode;      
     }
