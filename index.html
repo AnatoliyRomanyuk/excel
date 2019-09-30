@@ -6,22 +6,25 @@
     <script src="spreadsheet.js"></script>
     <link rel="stylesheet" href="spreadsheet.css">
 </head>
-<body>   
-    <div id="button">       
-        <input type="text" size="10" id="rows"> Rows 
-         </br>
-        <input type="text" size="10" id="columns"> Columns
-        </br>
-        <button type="submit" onclick = "showTable()"> Submit </button>        
+<body>
+    <div class="main" >
+        <h1>Create table:</h1>
+            <div class="inputData">
+                <input  type="number" size="10" id="rows" min="2" max="9"> Rows
+                 </br>
+                <input type="number" size="10" id="columns" min="2" max="9"> Columns
+                </br>
+                <button type="submit" onclick = "showTable()"> Submit </button>
+            </div>
+            <div class="import">
+                <textarea id="t" class="textarea" >
+                </textarea></br>
+
+                <button type="submit" onclick = ""> IMPORT </button></br>
+            </div>
+            <div class="table">
+
+            </div>
     </div>
-    <div id="main"></div> 
-    <div id="inout">
-        <textarea> </textarea></br>
-        <button type="submit" onclick = ""> EXPORT </button></br>
-        <button type="submit" onclick = ""> IMPORT </button></br>
-    </div>
-    <script>
-  
-    </Script>    
 </body>
 </html> 
