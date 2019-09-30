@@ -1,24 +1,45 @@
-/* #button {
+
+/*input:required:valid {
+    border-color: green;
+}*/
+
+.main {
+    width: 800px;
+}
+
+.inputData {
+    width: 400px;
+    float: left;
+}
+
+.import {
+    width: 400px;
+    float: left;
 
 }
-#main{
 
+.textarea {
+    max-width: 70%;
+    min-height: 200px;
+    display: block;
+    width: 100%;
 }
 
-#inout{
-
-}
- */
-#table {
+.table {
     border-collapse: collapse;
     table-layout: fixed;
 }
-#table th {
+
+input[type=number]{
+    width: 80px;
+}
+
+.table th {
     text-align: center;
     font-weight: bold;
 }
   
-#table td {
+.table td {
     width: 100px;
     height: 24px;
     white-space: nowrap;
@@ -28,26 +49,26 @@
     cursor: text;
 }
 
-#table td p {
+.table td p {
     text-overflow: ellipsis;
 }
 
-#table td input {    
+.table td input {
     width: 100px;
     height: 20px;    
     outline: 0;  
 }
 
-#table .highlight {
+.table .highlight {
     border: 2px solid #2c5e3c;
 }
 
-#table tr:nth-child(2n+3) {             /*odd - Все нечетные номера элементов*/
+.table tr:nth-child(2n+3) {             /*odd - Все нечетные номера элементов*/
     background: #EEEEEE; 
     color: black; 
 } 
 
-#table tr:nth-child(2n) {            /*even - Все четные номера элементов */
+.table tr:nth-child(2n) {            /*even - Все четные номера элементов */
     background: #FFFFFF; 
     color: black; 
 }
